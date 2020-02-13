@@ -1,0 +1,20 @@
+from math import sqrt
+
+pi = 3.1415926535897
+
+while True:
+    try:
+        a, b, c = [int(x) for x in input().split()]
+        p = (a + b + c) / 2
+        trangle = sqrt(p * (p - a) * (p - b) * (p - c))
+        moni = sqrt(((p - a) * (p - b) * (p - c)) / p)
+        noman = pi * moni ** 2
+
+        moni = (a * b * c) / sqrt((a + b + c) * (b + c - a) * (c + a - b) * (a + b - c))
+        mahbuba = (pi * moni ** 2) - trangle
+        akter = trangle - noman
+
+        print('%.4f %.4f %.4f' % (mahbuba, akter, noman))
+
+    except EOFError:
+        break
